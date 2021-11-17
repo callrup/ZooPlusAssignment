@@ -164,11 +164,5 @@ public class BasePage {
 	}
 	
 	
-	public static void getScreenshot(String s) throws IOException
-	{
-	File scrfile=	((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
-	FileUtils.copyFile(scrfile,new File(System.getProperty("user.dir")+"\\"+s+".png"));
-	
-	}
 	
 }
