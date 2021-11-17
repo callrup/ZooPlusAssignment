@@ -6,6 +6,9 @@ import java.net.ServerSocket;
 import java.net.URL;
 import java.util.concurrent.TimeUnit;
 
+import org.apache.commons.io.FileUtils;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.AfterTest;
@@ -59,13 +62,14 @@ public class BaseClass {
 			}
 			return isServerRunning;
 	 }
-	
-    public static void getScreenshot(String s) throws IOException
-	{
-	File scrfile=	((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
-	FileUtils.copyFile(scrfile,new File(System.getProperty("user.dir")+"\\"+s+".png"));
-	
-	}
+	 
+	 public static void getScreenshot(String s) throws IOException
+		{
+		File scrfile=	((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
+		FileUtils.copyFile(scrfile,new File(System.getProperty("user.dir")+"\\"+s+".png"));
+		
+		}
+		
 	
 	
     public AppiumDriverLocalService startAppiumServer() {
