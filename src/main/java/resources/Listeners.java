@@ -7,7 +7,7 @@ import org.testng.ITestListener;
 import org.testng.ITestResult;
 
 import com.appium.zooplus.AppiumProject.BaseClass;
-import pages.BasePage;
+
 
 public class Listeners implements ITestListener{
 
@@ -31,7 +31,7 @@ public class Listeners implements ITestListener{
 		//screenshot 
 		String s=result.getName();
 		try {
-		BasePage.getScreenshot(s);
+		BaseClass.getScreenshot(s);
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
